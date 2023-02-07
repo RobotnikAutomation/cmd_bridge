@@ -1,0 +1,23 @@
+
+{
+  "name": "Robotnik",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "robotnik",
+  "workspaceFolder": "/home/robot/robot_ws",
+  "remoteUser": "robot",
+  "postCreateCommand": "/home/robot/postcreate.sh",
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.cpptools",
+        "ms-python.python",
+        "GitHub.copilot",
+        "PKief.material-icon-theme",
+        "redhat.vscode-xml",
+        "redhat.vscode-yaml"
+      ]
+    }
+  }
+}
+
