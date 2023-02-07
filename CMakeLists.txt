@@ -13,6 +13,6 @@ catkin_package(
   CATKIN_DEPENDS std_msgs robotnik_msgs
 )
 
-catkin_install_python(PROGRAMS scripts/hello_world.py scripts/hello_world.py
+catkin_install_python(PROGRAMS scripts/bridge.py scripts/bridge.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
