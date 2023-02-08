@@ -13,3 +13,4 @@ services:
       - CC=/usr/bin/gcc
       - CXX=/usr/bin/g++
     command: sleep infinity
+    network_mode: host
