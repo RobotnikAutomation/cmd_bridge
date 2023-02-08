@@ -5,10 +5,10 @@
             "intelliSenseMode": "linux-gcc-x64",
             "compilerPath": "/usr/bin/gcc",
             "cStandard": "c11",
-            "cppStandard": "gnu++14",
+            "cppStandard": "c++14",
             "includePath": [
-                "/opt/ros/melodic/include",
-                "${workspaceFolder}/devel/include/"
+                "/opt/ros/foxy/include",
+                "${workspaceFolder}/install/include/**"
             ]
         }
     ],

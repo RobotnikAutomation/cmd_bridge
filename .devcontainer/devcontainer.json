@@ -1,11 +1,10 @@
-
 {
   "name": "Robotnik",
   "dockerComposeFile": "docker-compose.yml",
   "service": "robotnik",
-  "workspaceFolder": "/home/robot/robot_ws",
-  "remoteUser": "robot",
-  "postCreateCommand": "/home/robot/postcreate.sh",
+  "workspaceFolder": "/home/ros/robot_ws",
+  "remoteUser": "ros",
+  "postCreateCommand": "/home/ros/postcreate.sh",
 
   "customizations": {
     "vscode": {

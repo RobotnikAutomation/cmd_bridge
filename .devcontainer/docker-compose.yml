@@ -1,28 +1,15 @@
 version: '3.8'
 
 services:
-  roscore:
-    container_name: roscore
-    image: ros:melodic-ros-core-bionic
-    restart: always
-    command: roscore
-    environment:
-      - ROS_MASTER_URI=http://roscore:11311
-      - ROS_HOSTNAME=roscore
-
   robotnik:
-    container_name: dev-cmd-bridge
-    image: robotnik/robotnik-ros:builder-melodic-0.9.3-rc01
+    container_name: dev-cmd-bridge-ros2
+    image: robotnik/robotnik-ros:builder-foxy-0.9.4-rc2
     volumes:
-      - ./postcreate.sh:/home/robot/postcreate.sh
-      - ./c_cpp_properties.json:/home/robot/robot_ws/.vscode/c_cpp_properties.json
-      - ./ros.repo.yml:/home/robot/repos/ros.repo.yml
-      - ../:/home/robot/robot_ws/src/cmd_bridge/:cached
+      - ./postcreate.sh:/home/ros/postcreate.sh
+      - ./c_cpp_properties.json:/home/ros/robot_ws/.vscode/c_cpp_properties.json
+      - ./ros.repo.yml:/home/ros/repos/ros.repo.yml
+      - ../:/home/ros/robot_ws/src/cmd_bridge/:cached
     environment:
-      - ROS_MASTER_URI=http://roscore:11311
-      - ROS_HOSTNAME=dev-cmd-bridge
       - CC=/usr/bin/gcc
       - CXX=/usr/bin/g++
     command: sleep infinity
-    depends_on:
-      - roscore
