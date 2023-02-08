@@ -7,8 +7,9 @@ services:
     restart: always
     command: roscore
     environment:
-      - ROS_MASTER_URI=http://roscore:11311
-      - ROS_HOSTNAME=roscore
+      - ROS_MASTER_URI=http://localhost:11311
+      - ROS_HOSTNAME=localhost
+    network_mode: host
 
   robotnik:
     container_name: dev-cmd-bridge
@@ -19,10 +20,11 @@ services:
       - ./ros.repo.yml:/home/robot/repos/ros.repo.yml
       - ../:/home/robot/robot_ws/src/cmd_bridge/:cached
     environment:
-      - ROS_MASTER_URI=http://roscore:11311
-      - ROS_HOSTNAME=dev-cmd-bridge
+      - ROS_MASTER_URI=http://localhost:11311
+      - ROS_HOSTNAME=localhost
       - CC=/usr/bin/gcc
       - CXX=/usr/bin/g++
     command: sleep infinity
     depends_on:
       - roscore
+    network_mode: host
